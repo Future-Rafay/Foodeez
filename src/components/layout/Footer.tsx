@@ -9,29 +9,29 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary-600">BusinessHub</h3>
+            <h3 className="text-lg font-bold text-primary-600">Foodeez</h3>
             <p className="text-secondary-600 text-sm">
-              Empowering businesses to manage and grow their online presence effectively.
+              A Food Discovery, Visit, Order & Review Portal empowering restaurants and food lovers.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-secondary-900 mb-4">Quick Links</h4>
+            <h4 className="text-sm font-semibold text-secondary-900 mb-4">For Food Lovers</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/features" className="text-secondary-600 hover:text-primary-600 text-sm">
-                  Features
+                <Link href="/discover" className="text-secondary-600 hover:text-primary-600 text-sm">
+                  Discover Food
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-secondary-600 hover:text-primary-600 text-sm">
-                  Pricing
+                <Link href="/restaurants" className="text-secondary-600 hover:text-primary-600 text-sm">
+                  Find Restaurants
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-secondary-600 hover:text-primary-600 text-sm">
-                  About Us
+                <Link href="/reviews" className="text-secondary-600 hover:text-primary-600 text-sm">
+                  Leave Reviews
                 </Link>
               </li>
             </ul>
@@ -39,29 +39,29 @@ export const Footer = () => {
 
           {/* Support */}
           <div>
-            <h4 className="text-sm font-semibold text-secondary-900 mb-4">Support</h4>
+            <h4 className="text-sm font-semibold text-secondary-900 mb-4">For Businesses</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/help" className="text-secondary-600 hover:text-primary-600 text-sm">
-                  Help Center
+                <Link href="/business/register" className="text-secondary-600 hover:text-primary-600 text-sm">
+                  Register Your Business
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-secondary-600 hover:text-primary-600 text-sm">
-                  Contact Us
+                <Link href="/business/dashboard" className="text-secondary-600 hover:text-primary-600 text-sm">
+                  Business Dashboard
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-secondary-600 hover:text-primary-600 text-sm">
-                  FAQ
+                <Link href="/business/marketing" className="text-secondary-600 hover:text-primary-600 text-sm">
+                  Marketing Tools
                 </Link>
               </li>
               <li>
                 <Link
-                  href="mailto:support@businesshub.com"
+                  href="mailto:partners@foodeez.com"
                   className="text-secondary-600 hover:text-primary-600 text-sm"
                 >
-                  support@businesshub.com
+                  partners@foodeez.com
                 </Link>
               </li>
             </ul>
@@ -69,8 +69,18 @@ export const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-secondary-900 mb-4">Legal</h4>
+            <h4 className="text-sm font-semibold text-secondary-900 mb-4">Company</h4>
             <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-secondary-600 hover:text-primary-600 text-sm">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-secondary-600 hover:text-primary-600 text-sm">
+                  Contact Us
+                </Link>
+              </li>
               <li>
                 <Link href="/privacy" className="text-secondary-600 hover:text-primary-600 text-sm">
                   Privacy Policy
@@ -87,7 +97,7 @@ export const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-secondary-200">
           <p className="text-center text-secondary-600 text-sm">
-            © {new Date().getFullYear()} BusinessHub. All rights reserved.
+            © {new Date().getFullYear()} Foodeez. All rights reserved.
           </p>
         </div>
       </div>

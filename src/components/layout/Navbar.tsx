@@ -14,7 +14,7 @@ export const Navbar = () => {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
               <span className="text-2xl font-heading font-bold text-primary-600">
-                BusinessHub
+                Foodeez
               </span>
             </Link>
           </div>
@@ -22,22 +22,28 @@ export const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden sm:flex sm:items-center sm:space-x-8">
             <Link
-              href="/features"
+              href="/discover"
               className="text-secondary-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
             >
-              Features
+              Discover
             </Link>
             <Link
-              href="/pricing"
+              href="/restaurants"
               className="text-secondary-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
             >
-              Pricing
+              Restaurants
             </Link>
             <Link
               href="/about"
               className="text-secondary-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
             >
               About
+            </Link>
+            <Link
+              href="/business"
+              className="text-secondary-600 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              For Businesses
             </Link>
             <Link
               href="/login"
@@ -76,22 +82,28 @@ export const Navbar = () => {
         <div className="sm:hidden bg-white border-t border-secondary-200">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
-              href="/features"
+              href="/discover"
               className="block px-3 py-2 text-base font-medium text-secondary-600 hover:text-primary-600 hover:bg-primary-50 rounded-md"
             >
-              Features
+              Discover
             </Link>
             <Link
-              href="/pricing"
+              href="/restaurants"
               className="block px-3 py-2 text-base font-medium text-secondary-600 hover:text-primary-600 hover:bg-primary-50 rounded-md"
             >
-              Pricing
+              Restaurants
             </Link>
             <Link
               href="/about"
               className="block px-3 py-2 text-base font-medium text-secondary-600 hover:text-primary-600 hover:bg-primary-50 rounded-md"
             >
               About
+            </Link>
+            <Link
+              href="/business"
+              className="block px-3 py-2 text-base font-medium text-secondary-600 hover:text-primary-600 hover:bg-primary-50 rounded-md"
+            >
+              For Businesses
             </Link>
             <Link
               href="/login"

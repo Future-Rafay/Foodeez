@@ -1,55 +1,80 @@
 'use client';
 
 import { forwardRef } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
+// Button variants using class-variance-authority for more flexibility
+const buttonVariants = cva(
+  'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed rounded-xl shadow-sm hover:shadow-md',
+  {
+    variants: {
+      variant: {
+        primary: 'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500',
+        secondary: 'bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500',
+        accent: 'bg-accent-500 text-secondary-900 hover:bg-accent-600 focus:ring-accent-500',
+        outline: 'bg-transparent border-2 border-primary-500 text-primary-500 hover:bg-primary-50 focus:ring-primary-500',
+        outlineSecondary: 'bg-transparent border-2 border-secondary-500 text-secondary-500 hover:bg-secondary-50 focus:ring-secondary-500',
+        ghost: 'bg-transparent text-primary-500 hover:bg-primary-50 focus:ring-primary-500',
+        link: 'bg-transparent text-primary-500 hover:underline focus:ring-0 shadow-none hover:shadow-none p-0',
+        gradient: `bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 focus:ring-primary-500`,
+      },
+      size: {
+        xs: 'px-2.5 py-1.5 text-xs',
+        sm: 'px-3 py-2 text-sm',
+        md: 'px-4 py-2.5 text-base',
+        lg: 'px-6 py-3 text-lg',
+        xl: 'px-8 py-4 text-xl',
+      },
+      fullWidth: {
+        true: 'w-full',
+        false: '',
+      },
+      iconPosition: {
+        left: 'flex-row',
+        right: 'flex-row-reverse',
+        none: '',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+      fullWidth: false,
+      iconPosition: 'none',
+    },
+  }
+);
+
+// Button props interface
+export interface ButtonProps 
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, 
+    VariantProps<typeof buttonVariants> {
   isLoading?: boolean;
-  fullWidth?: boolean;
+  icon?: React.ReactNode;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       children,
-      variant = 'primary',
-      size = 'md',
+      variant,
+      size,
+      fullWidth,
+      iconPosition,
       isLoading = false,
-      fullWidth = false,
+      icon,
       className = '',
       disabled,
       ...props
     },
     ref
   ) => {
-    const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
-    
-    const variants = {
-      primary: 'bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500',
-      secondary: 'bg-secondary-100 text-secondary-900 hover:bg-secondary-200 focus:ring-secondary-500',
-      outline: 'border border-secondary-300 text-secondary-700 hover:bg-secondary-50 focus:ring-primary-500',
-    };
-
-    const sizes = {
-      sm: 'px-3 py-2 text-sm',
-      md: 'px-4 py-2 text-base',
-      lg: 'px-6 py-3 text-lg',
-    };
-
-    const width = fullWidth ? 'w-full' : '';
+    // Determine spacing for icon
+    const iconSpacing = iconPosition === 'left' ? 'mr-2' : iconPosition === 'right' ? 'ml-2' : '';
     
     return (
       <button
         ref={ref}
-        className={`
-          ${baseStyles}
-          ${variants[variant]}
-          ${sizes[size]}
-          ${width}
-          ${disabled || isLoading ? 'opacity-50 cursor-not-allowed' : ''}
-          ${className}
-        `}
+        className={buttonVariants({ variant, size, fullWidth, iconPosition, className })}
         disabled={disabled || isLoading}
         {...props}
       >
@@ -78,7 +103,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             Loading...
           </>
         ) : (
-          children
+          <>
+            {icon && iconPosition === 'left' && <span className={iconSpacing}>{icon}</span>}
+            {children}
+            {icon && iconPosition === 'right' && <span className={iconSpacing}>{icon}</span>}
+          </>
         )}
       </button>
     );

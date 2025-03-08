@@ -35,7 +35,8 @@ export default function SignUpPage() {
       // This is where you'll integrate with your backend
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated delay
       setIsCodeSent(true);
-    } catch (err) {
+    } catch (err: any) {
+      console.error('Signup error:', err);
       setError('Failed to create account. Please try again.');
     } finally {
       setIsLoading(false);
@@ -53,7 +54,8 @@ export default function SignUpPage() {
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated delay
       // Redirect to dashboard on success
       window.location.href = '/dashboard';
-    } catch (err) {
+    } catch (err: any) {
+      console.error('Verification error:', err);
       setError('Invalid verification code. Please try again.');
     } finally {
       setIsLoading(false);

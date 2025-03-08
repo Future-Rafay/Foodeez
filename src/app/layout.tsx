@@ -16,8 +16,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "BusinessHub - Manage Your Business Online",
-  description: "Register, manage, and grow your business with our comprehensive platform designed for modern entrepreneurs.",
+  title: "Foodeez - Food Discovery, Visit, Order & Review Portal",
+  description: "Discover, visit, order, and review your favorite restaurants and food with Foodeez - the ultimate food discovery platform.",
 };
 
 export default function RootLayout({

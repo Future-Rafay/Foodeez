@@ -60,7 +60,8 @@ export function CustomerForm({ initialData, onSubmit, mode }: CustomerFormProps)
       setIsLoading(true);
       await onSubmit(data);
       toast.success(mode === 'create' ? 'Customer created successfully!' : 'Customer updated successfully!');
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Form submission error:', error);
       toast.error('Something went wrong. Please try again.');
     } finally {
       setIsLoading(false);
