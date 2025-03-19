@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Input } from '@/components/ui/Input';
-import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/core/Input';
+import { Button } from '@/components/core/Button';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');

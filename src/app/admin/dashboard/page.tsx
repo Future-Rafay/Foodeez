@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Plus, TrendingUp, Users, Star } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/core/Button';
 
 interface Business {
   id: string;

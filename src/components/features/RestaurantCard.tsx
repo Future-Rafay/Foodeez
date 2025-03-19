@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cva, type VariantProps } from 'class-variance-authority';
-import Badge from './Badge';
+import Badge from '../core/Badge';
 
 // RestaurantCard variants
 const restaurantCardVariants = cva(
