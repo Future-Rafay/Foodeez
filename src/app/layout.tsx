@@ -17,7 +17,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Foodeez - Food Discovery, Visit, Order & Review Portal",
-  description: "Discover, visit, order, and review your favorite restaurants and food with Foodeez - the ultimate food discovery platform.",
+  description: "Discover, visit, and review your favorite restaurants and food with Foodeez - the ultimate food discovery platform.",
 };
 
 export default function RootLayout({
